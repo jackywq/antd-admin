@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Switch, Route, Redirect, routerRedux } from 'dva/router'
-import dynamic from 'dva/dynamic'
-import App from 'routes/app'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Switch, Route, Redirect, routerRedux } from 'dva/router';
+import dynamic from 'dva/dynamic';
+import App from 'routes/app';
 
-const { ConnectedRouter } = routerRedux
+const { ConnectedRouter } = routerRedux;
 
 const Routers = function ({ history, app }) {
     const error = dynamic({
@@ -16,7 +16,42 @@ const Routers = function ({ history, app }) {
             path: '/dashboard',
             models: () => [import('./models/dashboard')],
             component: () => import('./routes/dashboard/'),
-        }, {
+        },
+        {
+            path: '/login',
+            models: () => [import('./models/login')],
+            component: () => import('./routes/login/'),
+        },
+        /* 供应商管理模块 */
+        {
+            path: '/suppierAudit',
+            component: () => import('./routes/suppier/suppierAudit'),
+        },
+        {
+            path: '/suppierConfig',
+            component: () => import('./routes/suppier/suppierConfig'),
+        },
+        // {
+        //     path: '/suppierList',
+        //     component: () => import('./routes/suppier/suppierList'),
+        // },
+        /* 商品管理模块 */
+        {
+            path: '/goodsAudit',
+            // models: () => [import('./models/post')],
+            component: () => import('./routes/goods/goodsAudit'),
+        },
+        {
+            path: '/goodsConfig',
+            // models: () => [import('./models/post')],
+            component: () => import('./routes/goods/goodsConfig'),
+        },
+        {
+            path: '/goodsList',
+            // models: () => [import('./models/post')],
+            component: () => import('./routes/goods/goodsList'),
+        },
+        {
             path: '/user',
             models: () => [import('./models/user')],
             component: () => import('./routes/user/'),
@@ -24,10 +59,6 @@ const Routers = function ({ history, app }) {
             path: '/user/:id',
             models: () => [import('./models/user/detail')],
             component: () => import('./routes/user/detail/'),
-        }, {
-            path: '/login',
-            models: () => [import('./models/login')],
-            component: () => import('./routes/login/'),
         }, {
             path: '/request',
             component: () => import('./routes/request/'),
@@ -62,7 +93,11 @@ const Routers = function ({ history, app }) {
             path: '/post',
             models: () => [import('./models/post')],
             component: () => import('./routes/post/'),
-        },
+        }, {
+            path: '/post',
+            models: () => [import('./models/post')],
+            component: () => import('./routes/post/'),
+        }
     ]
 
     return (
@@ -92,6 +127,6 @@ const Routers = function ({ history, app }) {
 Routers.propTypes = {
     history: PropTypes.object,
     app: PropTypes.object,
-}
+};
 
-export default Routers
+export default Routers;

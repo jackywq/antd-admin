@@ -7,7 +7,59 @@ import pathToRegexp from 'path-to-regexp';
 
 const Menus = ({ siderFold, darkTheme, navOpenKeys, changeOpenKeys, menu, location }) => {
     // 生成树状
-    const menuTree = arrayToTree(menu.filter(_ => _.mpid !== '-1'), 'id', 'mpid');
+    // const menuTree = arrayToTree(menu.filter(_ => _.mpid !== '-1'), 'id', 'mpid');
+    const menuTree = [
+        {
+            icon: "laptop",
+            id: 1,
+            name: "Dashboard",
+            route: "/dashboard"
+        },
+        {
+            name: "供应商管理",
+            router: "/suppier",
+            id: 2,
+            children: [
+                {
+                    id: 10,
+                    name: "供应商审核",
+                    route: "/suppierAudit"
+                },
+                {
+                    id: 11,
+                    name: "供应商配置",
+                    route: "/suppierConfig"
+                },
+                {
+                    id: 12,
+                    name: "供应商列表",
+                    route: "/suppierList"
+                }
+            ]
+        },
+        {
+            name: "商品管理",
+            router: "/goods",
+            id: 3,
+            children: [
+                {
+                    id: 20,
+                    name: "商品审核",
+                    route: "/goodsAudit"
+                },
+                {
+                    id: 21,
+                    name: "商品配置",
+                    route: "/goodsConfig"
+                },
+                {
+                    id: 22,
+                    name: "商品列表",
+                    route: "/goodsList"
+                }
+            ]
+        }
+    ];
     const levelMap = {};
 
     // 递归生成菜单

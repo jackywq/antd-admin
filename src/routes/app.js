@@ -111,7 +111,7 @@ const App = ({ children, dispatch, app, loading, location }) => {
                     <Bread {...breadProps} />
                     <div className={styles.container}>
                         <div className={styles.content}>
-                            {hasPermission ? children : <Error />}
+                            { children }
                         </div>
                     </div>
                     <Footer />
