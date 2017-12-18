@@ -6,11 +6,11 @@ import App from 'routes/app';
 
 const { ConnectedRouter } = routerRedux;
 
-const Routers = function ({ history, app }) {
+const Routers = ({ history, app }) => {
     const error = dynamic({
         app,
         component: () => import('./routes/error'),
-    })
+    });
     const routes = [
         {
             path: '/dashboard',
@@ -31,10 +31,10 @@ const Routers = function ({ history, app }) {
             path: '/suppierConfig',
             component: () => import('./routes/suppier/suppierConfig'),
         },
-        // {
-        //     path: '/suppierList',
-        //     component: () => import('./routes/suppier/suppierList'),
-        // },
+        {
+            path: '/suppierList',
+            component: () => import('./routes/suppier/suppierList'),
+        },
         /* 商品管理模块 */
         {
             path: '/goodsAudit',
@@ -98,7 +98,7 @@ const Routers = function ({ history, app }) {
             models: () => [import('./models/post')],
             component: () => import('./routes/post/'),
         }
-    ]
+    ];
 
     return (
         <ConnectedRouter history={history}>
@@ -107,7 +107,8 @@ const Routers = function ({ history, app }) {
                     <Route exact path="/" render={() => (<Redirect to="/dashboard" />)} />
                     {
                         routes.map(({ path, ...dynamics }, key) => (
-                            <Route key={key}
+                            <Route
+                                key={key}
                                 exact
                                 path={path}
                                 component={dynamic({
@@ -121,12 +122,12 @@ const Routers = function ({ history, app }) {
                 </Switch>
             </App>
         </ConnectedRouter>
-    )
-}
+    );
+};
 
 Routers.propTypes = {
     history: PropTypes.object,
-    app: PropTypes.object,
+    app: PropTypes.object
 };
 
 export default Routers;

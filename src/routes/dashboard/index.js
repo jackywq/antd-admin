@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'dva';
 import { Row, Col, Card } from 'antd';
@@ -15,7 +15,7 @@ const bodyStyle = {
 };
 
 function Dashboard({ dashboard, loading }) {
-    const { weather, sales, quote, numbers, recentSales, comments, completed, browser, cpu, user } = dashboard
+    const { weather, sales, quote, numbers, recentSales, comments, completed, browser, cpu, user } = dashboard;
     const numberCards = numbers.map((item, key) => (
         <Col key={key} lg={6} md={12}>
             <NumberCard {...item} />
