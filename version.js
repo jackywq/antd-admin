@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('fs');
 const path = require('path')
 const beautify = require('js-beautify').js_beautify
 const config = require('./package.json')

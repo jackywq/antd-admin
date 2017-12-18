@@ -16,8 +16,8 @@ const bodyStyle = {
 
 function Dashboard({ dashboard, loading }) {
     const { weather, sales, quote, numbers, recentSales, comments, completed, browser, cpu, user } = dashboard;
-    const numberCards = numbers.map((item, key) => (
-        <Col key={key} lg={6} md={12}>
+    const numberCards = numbers.map((item, index) => (
+        <Col key={index} lg={6} md={12}>
             <NumberCard {...item} />
         </Col>
     ));
@@ -107,8 +107,8 @@ function Dashboard({ dashboard, loading }) {
 }
 
 Dashboard.propTypes = {
-    dashboard: PropTypes.object,
-    loading: PropTypes.object,
+    dashboard: PropTypes.object.isRequired,
+    loading: PropTypes.object.isRequired,
 };
 
 export default connect(({ dashboard, loading }) => ({ dashboard, loading }))(Dashboard);
