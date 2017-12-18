@@ -6,7 +6,7 @@ import { connect } from 'dva';
 
 const SuppierAudit = () => {
     return (
-         <div>供应商审核</div>
+         <div>供应商审核1212</div>
     );
 };
 
