@@ -160,9 +160,9 @@ const Menus = ({ siderFold, darkTheme, navOpenKeys, changeOpenKeys, menu, locati
     return (
         <Menu
             {...menuProps}
-            mode={siderFold ? 'vertical' : 'inline'}
+            mode='inline'
             theme={darkTheme ? 'dark' : 'light'}
-            selectedKeys={defaultSelectedKeys}
+            defaultSelectedKeys={['1']}
             onOpenChange={onOpenChange}
         >
             {menuItems}
