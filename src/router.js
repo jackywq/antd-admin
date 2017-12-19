@@ -111,10 +111,12 @@ const Routers = ({ history, app }) => {
                                 key={key}
                                 exact
                                 path={path}
-                                component={dynamic({
-                                    app,
-                                    ...dynamics,
-                                })}
+                                component={
+                                    dynamic({
+                                        app,
+                                        ...dynamics,
+                                    })
+                                }
                             />
                         ))
                     }

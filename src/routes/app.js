@@ -1,17 +1,17 @@
 /* global window */
 /* global document */
-import React from 'react'
-import NProgress from 'nprogress'
-import PropTypes from 'prop-types'
-import pathToRegexp from 'path-to-regexp'
-import { connect } from 'dva'
-import { Layout, Loader } from 'components'
-import { BackTop } from 'antd'
-import { classnames, config } from 'utils'
-import { Helmet } from 'react-helmet'
-import { withRouter } from 'dva/router'
-import '../themes/index.less'
-import './app.less'
+import React from 'react';
+import NProgress from 'nprogress';
+import PropTypes from 'prop-types';
+import pathToRegexp from 'path-to-regexp';
+import { connect } from 'dva';
+import { Layout, Loader } from 'components';
+import { BackTop } from 'antd';
+import { classnames, config } from 'utils';
+import { Helmet } from 'react-helmet';
+import { withRouter } from 'dva/router';
+import '../themes/index.less';
+import './app.less';
 import Error from './error';
 
 const { prefix, openPages } = config;
@@ -56,7 +56,7 @@ const App = ({ children, dispatch, app, loading, location }) => {
         changeOpenKeys(openKeys) {
             dispatch({ type: 'app/handleNavOpenKeys', payload: { navOpenKeys: openKeys } });
         },
-    };;
+    };
 
     const siderProps = {
         menu,
@@ -100,8 +100,8 @@ const App = ({ children, dispatch, app, loading, location }) => {
                     !isNavbar ?
                         <aside className={classnames(styles.sider, { [styles.light]: !darkTheme })}>
                             {
-                                siderProps.menu.length === 0 ? null :
-                                    <Sider {...siderProps} />
+                                siderProps.menu.length === 0?
+                                    null : <Sider {...siderProps} />
                             }
                         </aside> : ''
                 }
@@ -123,10 +123,10 @@ const App = ({ children, dispatch, app, loading, location }) => {
 
 App.propTypes = {
     children: PropTypes.element.isRequired,
-    location: PropTypes.object,
-    dispatch: PropTypes.func,
-    app: PropTypes.object,
-    loading: PropTypes.object
+    location: PropTypes.object.isRequired,
+    dispatch: PropTypes.func.isRequired,
+    app: PropTypes.object.isRequired,
+    loading: PropTypes.object.isRequired
 };
 
 export default withRouter(connect(({ app, loading }) => ({ app, loading }))(App));

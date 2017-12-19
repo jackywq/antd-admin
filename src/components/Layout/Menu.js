@@ -91,15 +91,15 @@ const Menus = ({ siderFold, darkTheme, navOpenKeys, changeOpenKeys, menu, locati
             );
         });
     };
-    const menuItems = getMenus(menuTree, siderFold)
+    const menuItems = getMenus(menuTree, siderFold);
 
     // 保持选中
     const getAncestorKeys = (key) => {
         let map = {};
         const getParent = (index) => {
-            const result = [String(levelMap[index])]
+            const result = [String(levelMap[index])];
             if (levelMap[result[0]]) {
-                result.unshift(getParent(result[0])[0])
+                result.unshift(getParent(result[0])[0]);
             }
             return result;
         };
@@ -157,13 +157,13 @@ const Menus = ({ siderFold, darkTheme, navOpenKeys, changeOpenKeys, menu, locati
     if (!defaultSelectedKeys) {
         defaultSelectedKeys = ['1'];
     }
-
     return (
         <Menu
             {...menuProps}
             mode={siderFold ? 'vertical' : 'inline'}
             theme={darkTheme ? 'dark' : 'light'}
             selectedKeys={defaultSelectedKeys}
+            onOpenChange={onOpenChange}
         >
             {menuItems}
         </Menu>
