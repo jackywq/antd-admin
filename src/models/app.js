@@ -108,7 +108,7 @@ export default {
             }
         },
 
-        * logout({  payload }, { call, put }) {
+        * logout({ payload }, { call, put }) {
             const data = yield call(logout, parse(payload));
             if (data.success) {
                 yield put({ type: 'query' });
@@ -131,19 +131,19 @@ export default {
             return {
                 ...state,
                 ...payload,
-            }
+            };
         },
 
         switchSider(state) {
-            window.localStorage.setItem(`${prefix}siderFold`, !state.siderFold)
+            window.localStorage.setItem(`${prefix}siderFold`, !state.siderFold);
             return {
                 ...state,
                 siderFold: !state.siderFold,
-            }
+            };
         },
 
         switchTheme(state) {
-            window.localStorage.setItem(`${prefix}darkTheme`, !state.darkTheme)
+            window.localStorage.setItem(`${prefix}darkTheme`, !state.darkTheme);
             return {
                 ...state,
                 darkTheme: !state.darkTheme,

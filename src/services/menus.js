@@ -1,12 +1,12 @@
-import { request, config } from 'utils'
+import { request, config } from 'utils';
 
-const { api } = config
-const { menus } = api
+const { api } = config;
+const { menus } = api;
 
-export async function query (params) {
-  return request({
-    url: menus,
-    method: 'get',
-    data: params,
-  })
+export async function query(params) {
+    return request({
+        url: menus,
+        method: 'get',
+        data: params,
+    });
 }

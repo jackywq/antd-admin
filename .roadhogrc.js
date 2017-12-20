@@ -5,6 +5,22 @@ const svgSpriteDirs = [
   path.resolve(__dirname, 'src/svg/'),
   require.resolve('antd').replace(/index\.js$/, '')
 ]
+const [ , , senv='dev'] = process.argv;
+const domains = {
+    dev: {
+        default: 'http://erp.dev.mengdian.com'
+    },
+    qa: {
+        default: 'http://erp.qa.mengdian.com'
+    },
+    pl: {
+        default: 'http://erp.pl.mengdian.com'
+    },
+    online: {
+        default: 'http://erp.mengdian.com'
+    }
+};
+const domain = domains[senv];
 
 export default {
   entry: 'src/index.js',
@@ -19,11 +35,10 @@ export default {
       "changeOrigin": true,
       "pathRewrite": { "^/api/v1/weather": "/v3/weather" }
     },
-    // "/api/v2": {
-    //   "target": "http://192.168.0.110",
-    //   "changeOrigin": true,
-    //   "pathRewrite": { "^/api/v2" : "/api/v2" }
-    // }
+    "/supplier": {
+        "target": domain.default,
+        "changeOrigin": true
+    }
   },
   env: {
     development: {

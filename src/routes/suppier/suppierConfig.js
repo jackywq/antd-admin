@@ -6,7 +6,7 @@ import { connect } from 'dva';
 
 const SuppierConfig = () => {
     return (
-         <div>供应商配置</div>
+        <div>供应商配置</div>
     );
 };
 

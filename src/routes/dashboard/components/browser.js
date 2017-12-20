@@ -32,7 +32,7 @@ function Browser({ data }) {
             render: (text, it) => <Tag color={status[it.status].color}>{text}%</Tag>,
         },
     ];
-    return <Table pagination={false} showHeader={false} columns={columns} rowKey={(record, key) => key} dataSource={data} />
+    return <Table pagination={false} showHeader={false} columns={columns} rowKey={(record, key) => key} dataSource={data} />;
 }
 
 Browser.propTypes = {

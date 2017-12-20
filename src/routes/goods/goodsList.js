@@ -6,7 +6,7 @@ import { connect } from 'dva';
 
 const GoodsList= () => {
     return (
-         <div>商品列表</div>
+        <div>商品列表</div>
     );
 };
 

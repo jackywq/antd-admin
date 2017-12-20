@@ -1,47 +1,47 @@
-import React from 'react'
-import { Radio } from 'antd'
-import HighChartsComponent from './HighChartsComponent'
-import styles from './index.less'
+import React from 'react';
+import { Radio } from 'antd';
+import HighChartsComponent from './HighChartsComponent';
+import styles from './index.less';
 
-const RadioGroup = Radio.Group
+const RadioGroup = Radio.Group;
 
 const chartList = [
-  {
-    label: 'Highstock',
-    value: 'Highstock',
-  },
-  {
-    label: 'Highmaps',
-    value: 'Highmaps',
-  },
-  {
-    label: 'HighMore',
-    value: 'HighMore',
-  },
-]
+    {
+        label: 'Highstock',
+        value: 'Highstock',
+    },
+    {
+        label: 'Highmaps',
+        value: 'Highmaps',
+    },
+    {
+        label: 'HighMore',
+        value: 'HighMore',
+    },
+];
 
 class Chart extends React.Component {
-  constructor () {
-    super()
-    this.state = {
-      type: '',
+    constructor() {
+        super();
+        this.state = {
+            type: '',
+        };
+        this.handleRadioGroupChange = this.handleRadioGroupChange.bind(this);
     }
-    this.handleRadioGroupChange = this.handleRadioGroupChange.bind(this)
-  }
-  handleRadioGroupChange (e) {
-    this.setState({
-      type: e.target.value,
-    })
-  }
-  render () {
-    return (<div className="content-inner">
-      <RadioGroup options={chartList} defaultValue="Highstock" onChange={this.handleRadioGroupChange} />
-      <div className={styles.chart}>
-        <HighChartsComponent type={this.state.type} />
-      </div>
-    </div>)
-  }
+    handleRadioGroupChange(e) {
+        this.setState({
+            type: e.target.value,
+        });
+    }
+    render() {
+        return (<div className="content-inner">
+            <RadioGroup options={chartList} defaultValue="Highstock" onChange={this.handleRadioGroupChange} />
+            <div className={styles.chart}>
+                <HighChartsComponent type={this.state.type} />
+            </div>
+        </div>);
+    }
 }
 
 
-export default Chart
+export default Chart;
