@@ -19,21 +19,25 @@ const Menus = ({ siderFold, darkTheme, navOpenKeys, changeOpenKeys, menu, locati
             name: "供应商管理",
             router: "/suppier",
             id: 2,
+            icon: "laptop",
             children: [
                 {
                     id: 10,
                     name: "供应商审核",
-                    route: "/suppierAudit"
+                    route: "/suppierAudit",
+                    icon: "laptop"
                 },
                 {
                     id: 11,
                     name: "供应商配置",
-                    route: "/suppierConfig"
+                    route: "/suppierConfig",
+                    icon: "laptop"
                 },
                 {
                     id: 12,
                     name: "供应商列表",
-                    route: "/suppierList"
+                    route: "/suppierList",
+                    icon: "laptop"
                 }
             ]
         },
@@ -41,21 +45,25 @@ const Menus = ({ siderFold, darkTheme, navOpenKeys, changeOpenKeys, menu, locati
             name: "商品管理",
             router: "/goods",
             id: 3,
+            icon: "laptop",
             children: [
                 {
                     id: 20,
                     name: "商品审核",
-                    route: "/goodsAudit"
+                    route: "/goodsAudit",
+                    icon: "laptop"
                 },
                 {
                     id: 21,
                     name: "商品配置",
-                    route: "/goodsConfig"
+                    route: "/goodsConfig",
+                    icon: "laptop"
                 },
                 {
                     id: 22,
                     name: "商品列表",
-                    route: "/goodsList"
+                    route: "/goodsList",
+                    icon: "laptop"
                 }
             ]
         }
