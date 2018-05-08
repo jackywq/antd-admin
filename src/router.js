@@ -77,11 +77,11 @@ const Routers = function ({ history, app }) {
       component: () => import('./routes/suppier/suppierList'),
     },
     /* 商品管理模块 */
-    {
-      path: '/goodsAudit',
-      // models: () => [import('./models/post')],
-      component: () => import('./routes/goods/goodsAudit'),
-    },
+    // {
+    //   path: '/goodsAudit',
+    //   // models: () => [import('./models/post')],
+    //   component: () => import('./routes/goods/goodsAudit'),
+    // },
     {
       path: '/goodsConfig',
       // models: () => [import('./models/post')],
