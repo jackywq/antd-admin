@@ -63,10 +63,34 @@ const Routers = function ({ history, app }) {
       models: () => [import('./models/post')],
       component: () => import('./routes/post/'),
     },
-    /* 新增页面 */
+    /* 供应商管理模块 */
     {
       path: '/suppierAudit',
-      component: () => import('./routes/suppier/suppierAudit/'),
+      component: () => import('./routes/suppier/suppierAudit'),
+    },
+    {
+      path: '/suppierConfig',
+      component: () => import('./routes/suppier/suppierConfig'),
+    },
+    {
+      path: '/suppierList',
+      component: () => import('./routes/suppier/suppierList'),
+    },
+    /* 商品管理模块 */
+    {
+      path: '/goodsAudit',
+      // models: () => [import('./models/post')],
+      component: () => import('./routes/goods/goodsAudit'),
+    },
+    {
+      path: '/goodsConfig',
+      // models: () => [import('./models/post')],
+      component: () => import('./routes/goods/goodsConfig'),
+    },
+    {
+      path: '/goodsList',
+      // models: () => [import('./models/post')],
+      component: () => import('./routes/goods/goodsList'),
     },
   ]
 
