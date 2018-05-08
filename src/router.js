@@ -63,6 +63,11 @@ const Routers = function ({ history, app }) {
       models: () => [import('./models/post')],
       component: () => import('./routes/post/'),
     },
+    /* 新增页面 */
+    {
+      path: '/suppierAudit',
+      component: () => import('./routes/suppier/suppierAudit/'),
+    },
   ]
 
   return (
